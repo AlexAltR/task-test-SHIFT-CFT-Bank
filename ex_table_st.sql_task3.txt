@@ -1,0 +1,81 @@
+
+begin
+  
+insert into "public"."TARIFS" values (1,'Тариф за выдачу кредита', 10);
+insert into "public"."TARIFS" values (2,'Тариф за открытие счета', 10);
+insert into "public"."TARIFS" values (3,'Тариф за обслуживание карты', 10);
+
+insert into "public"."PRODUCT_TYPE" values (1, 'КРЕДИТ', to_date('01.01.2018','DD.MM.YYYY'), null, 1);
+insert into "public"."PRODUCT_TYPE" values (2, 'ДЕПОЗИТ', to_date('01.01.2018','DD.MM.YYYY'), null, 2);
+insert into "public"."PRODUCT_TYPE" values (3, 'КАРТА', to_date('01.01.2018','DD.MM.YYYY'), null, 3);
+
+insert into "public"."CLIENTS" values (1, 'Сидоров Иван Петрович', 'Россия, Московская облать, г. Пушкин', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Московская облать, г. Пушкин, ул. Грибоедова, д. 5', '2222 555555, выдан ОВД г. Пушкин, 10.01.2015');
+insert into "public"."CLIENTS" values (2, 'Иванов Петр Сидорович', 'Россия, Московская облать, г. Клин', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Московская облать, г. Клин, ул. Мясникова, д. 3', '4444 666666, выдан ОВД г. Клин, 10.01.2015');
+insert into "public"."CLIENTS" values (3, 'Петров Сиодр Иванович', 'Россия, Московская облать, г. Балашиха', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Московская облать, г. Балашиха, ул. Пушкина, д. 7', '4444 666666, выдан ОВД г. Клин, 10.01.2015');
+/*New CLIENTS*/
+insert into "public"."CLIENTS" values (4, 'Павленко Никита Сергеевич', 'Россия, Ивановская облать, г. Иваново', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Ивановская облать, г. Иваново, ул. Кирова, д. 10', '4444 615466, выдан ОВД г. Иваново, 10.05.2015');
+insert into "public"."CLIENTS" values (5, 'Лукаш Иван Александрович', 'Россия, Забайкальский край, г. Чита', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Забайкальский край, г. Чита, ул. Ломоносова, д. 1', '4541 669676, выдан ОВД г. Чита, 16.09.2010');
+insert into "public"."CLIENTS" values (6, 'Казанцев Игорь Олегович', 'Россия, Новосибирская область, г. Бердск', to_date('01.01.2001','DD.MM.YYYY'), 'Россия, Новосибирская область, г. Бердск, ул. Пушкина, д. 7', '4654 661166, выдан ОВД г. Бердск, 19.06.2017');
+
+insert into "public"."PRODUCTS" values (1, 1, 'Кредитный договор с Сидоровым И.П.', 1, to_date('01.06.2015','DD.MM.YYYY'), null);
+insert into "public"."PRODUCTS" values (2, 2, 'Депозитный договор с Ивановым П.С.', 2, to_date('01.08.2017','DD.MM.YYYY'), null);
+insert into "public"."PRODUCTS" values (3, 3, 'Карточный договор с Петровым С.И.', 3, to_date('01.08.2017','DD.MM.YYYY'), null);
+/*New PRODUCTS*/
+insert into "public"."PRODUCTS" values (4, 1, 'Кредитный договор с Павленко Н.С.', 4, to_date('01.06.2015','DD.MM.YYYY'), null);
+insert into "public"."PRODUCTS" values (5, 2, 'Депозитный договор с Лукаш И.А.', 5, to_date('01.09.2021','DD.MM.YYYY'), null);
+insert into "public"."PRODUCTS" values (6, 3, 'Карточный договор с Казанцев И.О.', 6, to_date('01.12.2019','DD.MM.YYYY'), null);
+/*New NEW PRODUCTS for task_3*/
+insert into "public"."PRODUCTS" values (7, 1, 'Кредитный договор с Лукаш И.А.', 5, to_date('01.06.2015','DD.MM.YYYY'), null);
+
+insert into "public"."ACCOUNTS" values (1, 'Кредитный счет для Сидорова И.П.', -2000, 1, to_date('01.06.2015','DD.MM.YYYY'), null, 1, '45502810401020000022');
+insert into "public"."ACCOUNTS" values (2, 'Депозитный счет для Иванова П.С.', 6000, 2, to_date('01.08.2017','DD.MM.YYYY'), null, 2, '42301810400000000001');
+insert into "public"."ACCOUNTS" values (3, 'Карточный счет для Петрова С.И.', 8000, 3, to_date('01.08.2017','DD.MM.YYYY'), null, 3, '40817810700000000001');
+/*New ACCOUNTS*/
+insert into "public"."ACCOUNTS" values (4, 'Кредитный счет для Павленко Н.С.', -5000, 4, to_date('01.06.2016','DD.MM.YYYY'), null, 1, '46542810401021200022');
+insert into "public"."ACCOUNTS" values (5, 'Депозитный счет для Лукаш И.А.', 6000, 5, to_date('01.05.2019','DD.MM.YYYY'), null, 2, '44211810400000081301');
+insert into "public"."ACCOUNTS" values (6, 'Карточный счет для Казанцев И.О.', 8000, 6, to_date('01.09.2018','DD.MM.YYYY'), null, 3, '46547810700065420001');
+/*New NEW ACCOUNTS for task_3*/
+insert into "public"."ACCOUNTS" values (7, 'Кредитный счет для Лукаш И.А.', -5000, 5, to_date('05.06.2016','DD.MM.YYYY'), null, 1, '46542810401021200022');
+
+
+insert into "public"."RECORDS" values (1, 1, 5000, 1, to_date('01.06.2015','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (2, 0, 1000, 1, to_date('01.07.2015','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (3, 0, 2000, 1, to_date('01.08.2015','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (4, 0, 3000, 1, to_date('01.09.2015','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (5, 1, 5000, 1, to_date('01.10.2015','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (6, 0, 3000, 1, to_date('01.10.2015','DD.MM.YYYY'));
+
+insert into "public"."RECORDS" values (7, 0, 10000, 2, to_date('01.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (8, 1, 1000, 2, to_date('01.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (9, 1, 2000, 2, to_date('21.09.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (10, 1, 5000, 2, to_date('24.10.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (11, 0, 6000, 2, to_date('26.11.2017','DD.MM.YYYY'));
+
+insert into "public"."RECORDS" values (12, 0, 120000, 3, to_date('08.09.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (13, 1, 1000, 3, to_date('05.10.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (14, 1, 2000, 3, to_date('21.10.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (15, 1, 5000, 3, to_date('24.10.2017','DD.MM.YYYY'));
+
+/*New RECORDS*/
+insert into "public"."RECORDS" values (16, 1, 7000, 4, to_date('01.06.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (17, 0, 1000, 4, to_date('01.07.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (18, 0, 6000, 4, to_date('01.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (19, 0, 2000, 4, to_date('01.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (20, 1, 5000, 4, to_date('01.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (21, 0, 3000, 4, to_date('01.09.2021','DD.MM.YYYY'));
+
+insert into "public"."RECORDS" values (22, 0, 100000, 5, to_date('01.08.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (23, 1, 20000, 5, to_date('05.08.2017','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (24, 1, 50000, 5, to_date('19.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (25, 1, 10000, 5, to_date('19.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (26, 0, 5000, 5, to_date('19.09.2021','DD.MM.YYYY'));
+
+insert into "public"."RECORDS" values (27, 0, 120000, 6, to_date('08.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (28, 1, 20000, 6, to_date('05.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (29, 1, 50000, 6, to_date('21.09.2021','DD.MM.YYYY'));
+insert into "public"."RECORDS" values (30, 1, 50000, 6, to_date('24.09.2021','DD.MM.YYYY'));
+
+
+commit;
+
+end;
